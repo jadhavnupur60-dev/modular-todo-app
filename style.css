@@ -1,0 +1,241 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 16px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #29204f;
+    background: linear-gradient(
+        135deg,
+        #e0e7ff,
+        #fce7f3,
+        #ede9fe,
+        #dbeafe
+    );
+}
+
+.app {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid white;
+    border-radius: 24px;
+    box-shadow: 0 20px 55px rgba(100, 70, 180, 0.18);
+}
+
+.app-header {
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 8px 14px;
+    color: #7c3aed;
+    background: #f3e8ff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 12px 0;
+    font-size: 36px;
+    color: #312e81;
+}
+
+.subtitle {
+    color: #7c6fa8;
+    font-size: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #433078;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 2px solid #ddd6fe;
+    border-radius: 12px;
+    background: #fdfcff;
+    color: #29204f;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px #ede9fe;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.add-button {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    box-shadow: 0 5px 12px rgba(109, 40, 217, 0.2);
+}
+
+.add-button:hover {
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    transform: translateY(-2px);
+}
+
+.task-section {
+    margin-top: 32px;
+}
+
+.task-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.task-heading h2 {
+    font-size: 21px;
+    color: #433078;
+}
+
+#task-count {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #ede9fe;
+    color: #6d28d9;
+    font-size: 12px;
+}
+
+#empty-message {
+    padding: 26px 12px;
+    text-align: center;
+    color: #7c6fa8;
+    background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+    border: 1px dashed #c4b5fd;
+    border-radius: 14px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 15px;
+    background: linear-gradient(120deg, #faf5ff, #f0f9ff);
+    border: 1px solid #e9d5ff;
+    border-radius: 13px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+}
+
+.task-item input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    accent-color: #7c3aed;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+.task-item.completed {
+    background: linear-gradient(120deg, #ecfdf5, #f0fdf4);
+    border-color: #a7f3d0;
+}
+
+.task-item.completed .task-text {
+    color: #6b8b7d;
+    text-decoration: line-through;
+}
+
+.delete-button {
+    padding: 9px 12px;
+    border: none;
+    border-radius: 9px;
+    color: #be123c;
+    background: #ffe4e6;
+}
+
+.delete-button:hover {
+    background: #fecdd3;
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ede9fe;
+    text-align: center;
+    color: #8b83aa;
+    font-size: 13px;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .app {
+        padding: 22px 17px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .add-button {
+        padding: 14px;
+    }
+
+    .task-heading {
+        flex-wrap: wrap;
+    }
+}
